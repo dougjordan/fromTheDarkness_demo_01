@@ -3,9 +3,9 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
+
     private void Start()
     {
-        Debug.Log("Up and running");
         BeginGame();
     }
 
@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Restart");
             RestartGame();
         }
     }
@@ -25,12 +24,11 @@ public class GameManager : MonoBehaviour
     private void BeginGame()
     {
         mazeInstance = Instantiate(mazePrefab) as Maze;
-        StartCoroutine(mazeInstance.Generate());
+        mazeInstance.Generate();
     }
 
     private void RestartGame()
     {
-        StopAllCoroutines();
         Destroy(mazeInstance.gameObject);
         BeginGame();
     }

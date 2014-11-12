@@ -3,16 +3,10 @@ using System.Collections;
 
 public class MazeCell : MonoBehaviour {
 
-    public IntVector2 coordinates;
+    public int sizeX, sizeZ;
 
+    public MazeCell cellPrefab;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    private MazeCell[,] cells;
+
 }
