@@ -3,10 +3,11 @@ using System.Collections;
 
 public class MazeCell : MonoBehaviour {
 
-    public int sizeX, sizeZ;
+   // public int sizeX, sizeZ;
 
-    public MazeCell cellPrefab;
+    // public MazeCell cellPrefab;
 
-    private MazeCell[,] cells;
+    //private MazeCell[,] cells;
 
+    public IntVector2 coordinates;
 }
