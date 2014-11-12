@@ -9,13 +9,17 @@ public class Maze : MonoBehaviour {
 
     private MazeCell[,] cells;
 
-    public void Generate()
+    public float generationStepDelay;
+
+    public IEnumerator Generate()
     {
+        WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
         cells = new MazeCell[sizeX, sizeZ];
         for (int x = 0; x < sizeX; x++)
         {
             for (int z = 0; z < sizeZ; z++)
             {
+                yield return delay;
                 CreateCell(x, z);
             }
         }
